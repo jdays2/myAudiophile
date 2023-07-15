@@ -16,6 +16,7 @@
 		cursor: pointer;
 		position: relative;
 		display: flex;
+		transition: $basic-duration;
 	}
 
 	&__card-imgs {
@@ -25,17 +26,17 @@
 		bottom: 13.5rem;
 		left: 50%;
 		transform: translate(-50%, 0);
-    z-index: 2;
+		z-index: 2;
 	}
 
-  &__card-shadow {
-    position: absolute;
-    width: 18.2rem;
-    left: 50%;
+	&__card-shadow {
+		position: absolute;
+		width: 18.2rem;
+		left: 50%;
 		transform: translate(-50%, 0);
-    top: 10.2rem;
-    z-index: 1;
-  }
+		top: 10.2rem;
+		z-index: 1;
+	}
 
 	&__card-content {
 		margin-top: auto;
@@ -98,8 +99,10 @@
 
 @media (hover: hover) {
 	.links__card:hover {
+		transform: scale(1.02);
+
 		span {
-      opacity: 1;
+			opacity: 1;
 			color: $orange;
 		}
 	}
