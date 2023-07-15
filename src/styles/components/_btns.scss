@@ -1,0 +1,60 @@
+.btn {
+  padding: 1.5rem 3.15rem 1.5rem 2.95rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 0.1rem solid $black-dark;
+  background-color: inherit;
+  transition: $basic-duration;
+
+  span {
+    transition: $basic-duration;
+    color: $black-dark;
+    font-family: Manrope;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  &--orange {
+    background-color: $orange;
+    border-color: $orange;
+
+    span {
+      color: $white;
+    }
+  }
+
+  &--black {
+    background-color: $black-dark;
+    border-color: $black-dark;;
+
+    span {
+      color: $white;
+    }
+  }
+}
+
+@media (hover:hover) {
+  .btn:hover{
+    background-color: $black-dark;
+    border-color: $black-dark;
+
+    span {
+      color: $white
+    }
+  }
+
+  .btn--black:hover{
+    background-color: #4C4C4C;
+    border-color: #4C4C4C;
+  }
+
+  .btn--orange:hover{
+    background-color: $orange-light;
+    border-color: $orange-light;
+  }
+}
