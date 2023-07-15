@@ -1,0 +1,43 @@
+.seo {
+	width: 100%;
+	background-color: $white;
+	margin-bottom: 20rem;
+
+	&__wrapper {
+		width: 111rem;
+		margin: 0 auto;
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
+		height: fit-content;
+		display: flex;
+		align-items: center;
+		gap: 12.5rem;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 3.2rem;
+		width: 44.5rem;
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
+		height: fit-content;
+	}
+
+	&__message {
+		color: $black-dark;
+		font-family: Manrope;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2.5rem;
+		opacity: 0.5;
+	}
+
+	&__img {
+		border-radius: 0.8rem;
+		background: $gray;
+		width: 54rem;
+		height: 58.8rem;
+	}
+}

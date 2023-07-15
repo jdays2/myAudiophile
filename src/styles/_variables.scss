@@ -1,0 +1,17 @@
+//цвета
+$orange: #d87d4a;
+$orange-light: #fbaf85;
+$black: #101010;
+$gray: #f1f1f1;
+$light: #fafafa;
+$white: #FFFFFF;
+$black-dark: #000000;
+
+//длинная анимаций
+$basic-duration: 0.4s;
+
+//шрифты
+@font-face {
+	font-family: 'Manrope';
+	src: url('../assets/fonts/Manrope-Regular.ttf') format('truetype');
+}

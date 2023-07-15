@@ -1,0 +1,39 @@
+.title {
+	color: $white;
+	font-family: Manrope;
+	font-size: 5.6rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 5.8rem;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+}
+
+.subtitle {
+	color: $white;
+	font-family: Manrope;
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 2.5rem;
+	opacity: 0.75;
+
+  &--black {
+    color: $black-dark;
+  }
+}
+
+.title-black {
+	color: $black-dark;
+	font-family: Manrope;
+	font-size: 4rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 4.4rem;
+	letter-spacing: 0.1429rem;
+	text-transform: uppercase;
+
+	span {
+		color: $orange;
+	}
+}

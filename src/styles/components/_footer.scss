@@ -1,0 +1,90 @@
+.footer {
+	background-color: $black;
+	padding: 7.5rem 16.5rem 4.8rem;
+	display: flex;
+	flex-direction: column;
+  
+	&__wrapper {
+		width: 111rem;
+		margin: 0 auto;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 10.1rem;
+      height: .4rem;
+      position: absolute;
+      left:0rem;
+      top: -7.48rem;
+      background-color: $orange;
+    }
+	}
+
+	&__nav-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+    margin-bottom: 3.6rem;
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 3.4rem;
+	}
+
+	&__content {
+		width: 100%;
+		align-items: flex-end;
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
+		height: fit-content;
+		display: flex;
+		justify-content: space-between;
+    margin-bottom: 5.6rem;
+	}
+
+	&__message {
+		color: $white;
+		font-family: Manrope;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 400;
+    opacity: 0.5;
+		line-height: 2.5rem;
+		width: 54rem;
+	}
+
+	&__link-icons {
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+	}
+
+	&__icon {
+		width: 2.4rem;
+		height: 2.4rem;
+		cursor: pointer;
+    path {
+      transition: $basic-duration;
+    }
+	}
+
+  &__rights-block {
+    color: $white;
+    font-family: Manrope;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 0.5;
+    line-height: 2.5rem;
+  }
+}
+
+@media (hover: hover) {
+	.footer__icon:hover {
+		path {
+			fill: $orange;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+.hero {
+	width: 100%;
+	background-color: #121212;
+  margin-bottom: 12rem;
+
+  &__wrapper {
+    width: 111rem;
+    height: 72.9rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+	&__img {
+		width: 70.88rem;
+	}
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 36.6rem;
+    margin-bottom: 15.1rem;
+  }
+
+	&__message {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+    margin-bottom: 4rem;
+
+		span {
+			color: #fff;
+			font-family: Manrope;
+			font-size: 1.4rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			letter-spacing: 1rem;
+			text-transform: uppercase;
+			opacity: 0.5;
+		}
+	}
+}
