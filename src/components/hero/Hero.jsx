@@ -7,7 +7,7 @@ const Hero = () => {
 
 			
 			<div className="hero__content">
-				<div className="hero__message">
+				<div className="message">
 					<span>NEW PRODUCT</span>
 					<strong className='title'>XX99 Mark II HeadphoneS</strong>
 					<p className='subtitle'>
