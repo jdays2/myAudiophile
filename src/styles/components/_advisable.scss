@@ -85,7 +85,7 @@
 		&__img {
 			border-radius: 0.8rem;
 			overflow: hidden;
-			width: 54rem;
+			flex: 1;
 			height: 100%;
 
 			img {
@@ -98,14 +98,20 @@
 			background-color: $gray;
 			border-radius: 0.8rem;
 			overflow: hidden;
-			width: 54rem;
-			padding: 9.5rem;
+			flex: 1;
+			justify-content: center;
 			display: flex;
-			align-items: center;
+			flex-direction: column;
+			align-items: flex-start;
 			gap: 3.2rem;
+
+			.btn {
+				margin-left: 9.5rem;
+			}
 		}
 
 		&__title {
+			margin-left: 9.5rem;
 			color: $black-dark;
 			font-family: Manrope;
 			font-size: 2.8rem;
@@ -115,5 +121,7 @@
 			letter-spacing: 0.2rem;
 			text-transform: uppercase;
 		}
+
+		
 	}
 }
