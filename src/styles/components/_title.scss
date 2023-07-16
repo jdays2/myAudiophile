@@ -7,6 +7,20 @@
 	line-height: 5.8rem;
 	letter-spacing: 0.2rem;
 	text-transform: uppercase;
+
+	&--new-product {
+		color: $orange;
+		font-family: Manrope;
+		font-size: 1.4rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: 1rem;
+		text-transform: uppercase;
+
+		display: block;
+		margin-bottom: 1.6rem;
+	}
 }
 
 .subtitle {
@@ -18,9 +32,9 @@
 	line-height: 2.5rem;
 	opacity: 0.75;
 
-  &--black {
-    color: $black-dark;
-  }
+	&--black {
+		color: $black-dark;
+	}
 }
 
 .title-black {
@@ -39,20 +53,20 @@
 }
 
 .message {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  margin-bottom: 4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.4rem;
+	margin-bottom: 4rem;
 
-  span {
-    color: #fff;
-    font-family: Manrope;
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 1rem;
-    text-transform: uppercase;
-    opacity: 0.5;
-  }
+	span {
+		color: #fff;
+		font-family: Manrope;
+		font-size: 1.4rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: 1rem;
+		text-transform: uppercase;
+		opacity: 0.5;
+	}
 }
