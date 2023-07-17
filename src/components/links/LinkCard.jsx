@@ -1,10 +1,8 @@
 import bgShadow from '../../assets/svg/background-shadow.svg';
 
-import { Link } from 'react-router-dom';
-
 const LinkCard = ({ title, img }) => {
 	return (
-		// <Link>
+
 			<div className="links__card">
 				<div className="links__card-imgs">
 					<img
@@ -31,14 +29,14 @@ const LinkCard = ({ title, img }) => {
 								<path
 									d="M1.3219 1L6.3219 6L1.3219 11"
 									stroke="#D87D4A"
-									stroke-width="2"
+									strokeWidth="2"
 								/>
 							</svg>
 						</div>
 					</div>
 				</div>
 			</div>
-		// </Link>
+
 	);
 };
 

@@ -7,6 +7,7 @@ import Category from './pages/Category';
 import { Route, Routes } from 'react-router';
 
 const App = () => {
+
 	return (
 		<>
 			<Header></Header>
@@ -16,7 +17,7 @@ const App = () => {
 					element={<Main />}
 				/>
 				<Route
-					path="/category"
+					path="/category/:categoryId"
 					element={<Category />}
 				/>
 			</Routes>
