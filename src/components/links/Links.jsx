@@ -5,12 +5,6 @@ import { setCurrentCategory } from '../../redux/slices/productsSlice';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-// const linkArray = [
-// 	{ img: headphonesImg, title: 'HEADPHONES' },
-// 	{ img: speakersImg, title: 'SPEAKERS' },
-// 	{ img: earphonesImg, title: 'EARPHONES' },
-// ];
-
 const Links = () => {
 	const dispatch = useDispatch();
 	const linksArray = useSelector((state) => state.categorys);
@@ -21,7 +15,6 @@ const Links = () => {
 		window.scrollTo({
 			top: 0,
 			left: 0,
-			behavior: 'smooth',
 		});
 	};
 

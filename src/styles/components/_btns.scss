@@ -1,60 +1,78 @@
 .btn {
-  padding: 1.5rem 3.15rem 1.5rem 2.95rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: 0.1rem solid $black-dark;
-  background-color: inherit;
-  transition: $basic-duration;
+	padding: 1.5rem 3.15rem 1.5rem 2.95rem;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	border: 0.1rem solid $black-dark;
+	background-color: inherit;
+	transition: $basic-duration;
 
-  span {
-    transition: $basic-duration;
-    color: $black-dark;
-    font-family: Manrope;
-    font-size: 1.3rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-  }
+	span {
+		transition: $basic-duration;
+		color: $black-dark;
+		font-family: Manrope;
+		font-size: 1.3rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+	}
 
-  &--orange {
-    background-color: $orange;
-    border-color: $orange;
+	&--orange {
+		background-color: $orange;
+		border-color: $orange;
 
-    span {
-      color: $white;
-    }
-  }
+		span {
+			color: $white;
+		}
+	}
 
-  &--black {
-    background-color: $black-dark;
-    border-color: $black-dark;;
+	&--black {
+		background-color: $black-dark;
+		border-color: $black-dark;
 
-    span {
-      color: $white;
-    }
-  }
+		span {
+			color: $white;
+		}
+	}
 }
 
-@media (hover:hover) {
-  .btn:hover{
-    background-color: $black-dark;
-    border-color: $black-dark;
+.back-btn {
+	cursor: pointer;
+  border: none;
+	outline: none;
+	background-color: transparent;
+	opacity: 0.5;
+	margin-bottom: 5.6rem;
+	
+	span {
+		color: $black-dark;
+		font-family: Manrope;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2.5rem;
+	}
+}
 
-    span {
-      color: $white
-    }
-  }
+@media (hover: hover) {
+	.btn:hover {
+		background-color: $black-dark;
+		border-color: $black-dark;
 
-  .btn--black:hover{
-    background-color: #4C4C4C;
-    border-color: #4C4C4C;
-  }
+		span {
+			color: $white;
+		}
+	}
 
-  .btn--orange:hover{
-    background-color: $orange-light;
-    border-color: $orange-light;
-  }
+	.btn--black:hover {
+		background-color: #4c4c4c;
+		border-color: #4c4c4c;
+	}
+
+	.btn--orange:hover {
+		background-color: $orange-light;
+		border-color: $orange-light;
+	}
 }

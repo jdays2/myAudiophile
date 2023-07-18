@@ -8,7 +8,7 @@ const ProductCardBlock = ({array}) => {
 				{array.map((card, id) => {
 					return (
 						<ProductCard
-							id={id + 1}
+							id={card.id}
 							key={id}
 							{...card}
 						/>
