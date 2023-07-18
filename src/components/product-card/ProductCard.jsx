@@ -1,4 +1,19 @@
+import { setCurrentProduct } from '../../redux/slices/productsSlice';
+
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 const ProductCard = ({ id, img, isNew, title, subtitle }) => {
+	const dispatch = useDispatch();
+	const setCurrentProd = (id) => {
+		dispatch(setCurrentProduct(id));
+
+		window.scrollTo({
+			top: 0,
+			left: 0,
+		});
+	};
+
 	const isEven = (value) => {
 		return value % 2 === 0;
 	};
@@ -20,9 +35,14 @@ const ProductCard = ({ id, img, isNew, title, subtitle }) => {
 				<p className="title-black">{title}</p>
 				<p className="subtitle subtitle--black">{subtitle}</p>
 
-				<button className="btn btn--orange">
+				<Link
+					to={`/card-detail/${id}`}
+					onClick={() => {
+						setCurrentProd(id);
+					}}
+					className="btn btn--orange">
 					<span>See Product</span>
-				</button>
+				</Link>
 			</div>
 		</div>
 	);

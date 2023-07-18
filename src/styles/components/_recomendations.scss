@@ -1,0 +1,56 @@
+.recomendations {
+	margin-bottom: 16rem;
+	&__title {
+		text-align: center;
+		color: $black-dark;
+		text-align: center;
+		font-family: Manrope;
+		font-size: 2.4rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.1714rem;
+		text-transform: uppercase;
+		margin-bottom: 6.4rem;
+	}
+
+	&__list {
+		width: 111rem;
+		margin: 0 auto;
+		display: flex;
+		gap: 3rem;
+	}
+
+	&__img {
+		width: 35rem;
+		height: 31.8rem;
+		border-radius: 0.8rem;
+		margin-bottom: 4rem;
+	}
+
+	&__card-title {
+		color: $black-dark;
+		text-align: center;
+		font-family: Manrope;
+		font-size: 2.4rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.1714rem;
+		text-transform: uppercase;
+    max-width: 80%;
+	}
+
+	&__card {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+    transition: $basic-duration;
+    height: 47.1rem;
+
+    .btn {
+      margin-bottom: 0;
+      margin-top: auto;
+    }
+	}
+}
