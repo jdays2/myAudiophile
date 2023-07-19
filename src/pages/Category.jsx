@@ -3,22 +3,22 @@ import Seo from '../components/seo/Seo';
 import Links from '../components/links/Links';
 import CategoryHead from '../components/category-head/CategoryHead';
 
+import { getCardByTitle } from '../utils/getCategoryByTitle';
+
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 
 const Category = () => {
-	const categoryId = useSelector((state) => state.currentCategory);
-	const categoryArray = useSelector(
-		(state) => state.categorys[categoryId].advertisement
-	);
-	const categoryTitle = useSelector(
-		(state) => state.categorys[categoryId].title
-	);
+	const { title } = useParams();
+	const categoryId = useSelector(state => state.categorys);
+	const category = getCardByTitle(title, categoryId);
+	const categoryArray = category.advertisement;
 
 	return (
 		<>
-			<CategoryHead title={categoryTitle} />
+			<CategoryHead title={title} />
 			<ProductCardBlock array={categoryArray} />
-			<Links />
+			<Links/>
 			<Seo />
 		</>
 	);

@@ -23,7 +23,7 @@ const Links = () => {
 			<nav className="links__wrapper">
 				{linksArray.map((card, id) => {
 					return (
-						<Link to={`/category/${card.title}`} onClick={()=> {setCategory(id)}}>
+						<Link style={{ textDecoration: 'none' }}   to={`/category/${card.title}`} onClick={()=> {setCategory(id)}}>
 							<LinkCard
 								key={id}
 								img={card.img}
