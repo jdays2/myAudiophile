@@ -20,6 +20,11 @@ const initialState = {
 						"Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.",
 						'The advanced Active Noise Cancellation with built-in equalizer allows you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17-hour battery life, the XX99 Mark II headphones give you superior sound, cutting-edge technology, and a modern design aesthetic.',
 					],
+					publicity: {
+						img1: '/products-assets/headphones/XX99-mark-2/publicity-1.png',
+						img2: '/products-assets/headphones/XX99-mark-2/publicity-2.png',
+						img3: '/products-assets/headphones/XX99-mark-2/publicity-3.png',
+					},
 				},
 				{
 					id: 1,
@@ -35,6 +40,11 @@ const initialState = {
 						"Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.",
 						'The advanced Active Noise Cancellation with built-in equalizer allows you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17-hour battery life, the XX99 Mark II headphones give you superior sound, cutting-edge technology, and a modern design aesthetic.',
 					],
+					publicity: {
+						img1: '/products-assets/headphones/XX99-mark-1/publicity-1.png',
+						img2: '/products-assets/headphones/XX99-mark-1/publicity-2.png',
+						img3: '/products-assets/headphones/XX99-mark-1/publicity-3.png',
+					},
 				},
 				{
 					id: 2,
@@ -50,6 +60,11 @@ const initialState = {
 						"Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.",
 						'The advanced Active Noise Cancellation with built-in equalizer allows you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17-hour battery life, the XX99 Mark II headphones give you superior sound, cutting-edge technology, and a modern design aesthetic.',
 					],
+					publicity: {
+						img1: '/products-assets/headphones/XX59/publicity-1.png',
+						img2: '/products-assets/headphones/XX59/publicity-2.png',
+						img3: '/products-assets/headphones/XX59/publicity-3.png',
+					},
 				},
 			],
 		},
@@ -71,6 +86,11 @@ const initialState = {
 						"Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.",
 						'The advanced Active Noise Cancellation with built-in equalizer allows you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17-hour battery life, the XX99 Mark II headphones give you superior sound, cutting-edge technology, and a modern design aesthetic.',
 					],
+					publicity: {
+						img1: '/products-assets/speakers/ZX9-speaker/publicity-1.png',
+						img2: '/products-assets/speakers/ZX9-speaker/publicity-2.png',
+						img3: '/products-assets/speakers/ZX9-speaker/publicity-3.png',
+					},
 				},
 				{
 					id: 4,
@@ -86,6 +106,11 @@ const initialState = {
 						"Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.",
 						'The advanced Active Noise Cancellation with built-in equalizer allows you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17-hour battery life, the XX99 Mark II headphones give you superior sound, cutting-edge technology, and a modern design aesthetic.',
 					],
+					publicity: {
+						img1: '/products-assets/speakers/ZX7-speaker/publicity-1.png',
+						img2: '/products-assets/speakers/ZX7-speaker/publicity-2.png',
+						img3: '/products-assets/speakers/ZX7-speaker/publicity-3.png',
+					},
 				},
 			],
 		},
@@ -108,12 +133,16 @@ const initialState = {
 						"Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.",
 						'The advanced Active Noise Cancellation with built-in equalizer allows you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17-hour battery life, the XX99 Mark II headphones give you superior sound, cutting-edge technology, and a modern design aesthetic.',
 					],
+					publicity: {
+						img1: '/products-assets/earphones/YX1-wireless-earphones/publicity-1.png',
+						img2: '/products-assets/earphones/YX1-wireless-earphones/publicity-2.png',
+						img3: '/products-assets/earphones/YX1-wireless-earphones/publicity-3.png',
+					},
 				},
 			],
 		},
 	],
 	currentCategory: 0,
-	currentProduct: 0,
 };
 
 export const productsSlice = createSlice({
@@ -123,10 +152,7 @@ export const productsSlice = createSlice({
 		setCurrentCategory(state, action) {
 			state.currentCategory = action.payload;
 		},
-		setCurrentProduct(state, action) {
-			state.currentProduct = action.payload;
-		}
 	},
 });
 
-export const { setCurrentCategory, setCurrentProduct } = productsSlice.actions;
+export const { setCurrentCategory } = productsSlice.actions;

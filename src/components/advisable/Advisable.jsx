@@ -1,6 +1,10 @@
-import largeBlockImg from '../../assets/png/zx9-speaker.png'
-import mediumBlockImg from '../../assets/png/zx7-speaker.png'
-import smallBlockImg from '../../assets/png/yx1-earphones.png'
+import largeBlockImg from '../../assets/png/zx9-speaker.png';
+import mediumBlockImg from '../../assets/png/zx7-speaker.png';
+import smallBlockImg from '../../assets/png/yx1-earphones.png';
+
+import { moveTop } from '../../utils/moveTop';
+
+import { Link } from 'react-router-dom';
 
 const Advisable = () => {
 	return (
@@ -22,10 +26,13 @@ const Advisable = () => {
 								deliver truly remarkable sound.
 							</p>
 						</div>
-
-						<button className="btn btn--black">
+						<Link
+							style={{ textDecoration: 'none' }}
+							onClick={moveTop}
+							to={`/card-detail/3`}
+							className="btn btn--black">
 							<span>See Product</span>
-						</button>
+						</Link>
 					</div>
 				</div>
 
@@ -38,9 +45,13 @@ const Advisable = () => {
 					</div>
 					<div className="medium-block__content">
 						<p className="medium-block__title">ZX7 SPEAKER</p>
-						<button className="btn">
+						<Link
+							style={{ textDecoration: 'none' }}
+							onClick={moveTop}
+							to={`/card-detail/3`}
+							className="btn">
 							<span>See Product</span>
-						</button>
+						</Link>
 					</div>
 				</div>
 
@@ -54,9 +65,13 @@ const Advisable = () => {
 
 					<div className="small-block__content">
 						<p className="small-block__title">YX1 EARPHONES</p>
-						<button className="btn">
+						<Link
+							style={{ textDecoration: 'none' }}
+							onClick={moveTop}
+							to={`/card-detail/5`}
+							className="btn">
 							<span>See Product</span>
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>

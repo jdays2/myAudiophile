@@ -1,0 +1,38 @@
+.prod-publicity {
+	width: 100%;
+	margin-bottom: 16rem;
+	&__wrapper {
+		width: 111rem;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__col-block {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__img {
+		&--one {
+			width: 44.5rem;
+			height: 28rem;
+		}
+
+		&--two {
+			width: 44.5rem;
+			height: 28rem;
+		}
+
+		&--three {
+			width: 63.5rem;
+			height: 59.2rem;
+		}
+
+		img {
+			-o-object-fit: cover;
+			object-fit: cover;
+		}
+	}
+}

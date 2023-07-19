@@ -10,14 +10,14 @@ import { Route, Routes } from 'react-router';
 const App = () => {
 	return (
 		<>
-			<Header></Header>
+			<Header />
 			<Routes>
 				<Route
 					path="/"
 					element={<Main />}
 				/>
 				<Route
-					path="/category/:categoryId"
+					path="/category/:title"
 					element={<Category />}
 				/>
 				<Route
@@ -25,7 +25,7 @@ const App = () => {
 					element={<ProductDetail />}
 				/>
 			</Routes>
-			<Footer></Footer>
+			<Footer />
 		</>
 	);
 };
