@@ -1,6 +1,9 @@
 import BackBtn from '../back-btn/BackBtn';
 
+import { addToCart } from '../../redux/slices/productsSlice';
+
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 const ProductCardDet = ({product}) => {
 	const [count, setCount] = useState(1);
@@ -14,6 +17,13 @@ const ProductCardDet = ({product}) => {
 			setCount(count - 1);
 		}
 	};
+
+	const dispatch = useDispatch();
+
+	const addItem = () => {
+		dispatch(addToCart({product, count}))
+		setCount(1);
+	}
 
 	return (
 		<div className="detail-card">
@@ -37,7 +47,7 @@ const ProductCardDet = ({product}) => {
 							{product.subtitle}
 						</p>
 
-						<span className="detail-card__price">{product.price}</span>
+						<span className="detail-card__price">$ {product.price}</span>
 
 						<div className="detail-card__counter-wrapper">
 							<div className="detail-card__counter">
@@ -53,8 +63,8 @@ const ProductCardDet = ({product}) => {
 									+
 								</span>
 							</div>
-							<button className="btn btn--orange">
-								<span>See Product</span>
+							<button className="btn btn--orange" onClick={addItem}>
+								<span>ADD TO CART</span>
 							</button>
 						</div>
 					</div>
