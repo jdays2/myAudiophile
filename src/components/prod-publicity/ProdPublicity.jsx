@@ -1,7 +1,4 @@
-
-
 const ProdPublicity = ({img1, img2, img3}) => {
-  console.log({img1, img2, img3})
 	return (
 		<div className="prod-publicity">
 			<div className="prod-publicity__wrapper">

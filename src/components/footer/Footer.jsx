@@ -1,13 +1,17 @@
 import logo from '../../assets/svg/logo.svg';
 
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { moveTop } from '../../utils/moveTop';
 
 const Footer = () => {
+	const categoryArray = useSelector((state) => state.categorys);
 	return (
 		<footer className="footer">
 			<div className="footer__wrapper">
 				<div className="footer__nav-wrapper">
-					<Link style={{ textDecoration: 'none' }}  
+					<Link
+						style={{ textDecoration: 'none' }}
 						to="/"
 						className="main-logo">
 						<img
@@ -17,18 +21,20 @@ const Footer = () => {
 					</Link>
 
 					<nav className="footer__nav">
-						<Link style={{ textDecoration: 'none' }}  >
+						<Link style={{ textDecoration: 'none' }}>
 							<span className="nav-link">Home</span>
 						</Link>
-						<Link style={{ textDecoration: 'none' }}  >
-							<span className="nav-link">HEADPHONES</span>
-						</Link>
-						<Link style={{ textDecoration: 'none' }}  >
-							<span className="nav-link">SPEAKERS</span>
-						</Link>
-						<Link style={{ textDecoration: 'none' }}  >
-							<span className="nav-link">EARPHONES</span>
-						</Link>
+						{categoryArray.map((category, id) => {
+							return (
+								<Link
+									onClick={moveTop}
+									style={{ textDecoration: 'none' }}
+									to={`/category/${category.title}`}
+									key={id}>
+									<span className="nav-link">{category.title}</span>
+								</Link>
+							);
+						})}
 					</nav>
 				</div>
 
@@ -44,7 +50,6 @@ const Footer = () => {
 						<span className="footer__icon">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								
 								viewBox="0 0 24 24"
 								fill="none">
 								<path
@@ -56,7 +61,6 @@ const Footer = () => {
 						<span className="footer__icon">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								
 								viewBox="0 0 24 20"
 								fill="none">
 								<path
@@ -68,7 +72,6 @@ const Footer = () => {
 						<span className="footer__icon">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								
 								viewBox="0 0 24 24"
 								fill="none">
 								<path

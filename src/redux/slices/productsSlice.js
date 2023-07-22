@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { calculateTotal } from '../../utils/calculateTotal';
+
 const initialState = {
 	categorys: [
 		{
@@ -8,8 +10,9 @@ const initialState = {
 			advertisement: [
 				{
 					id: 0,
+					counter: 0,
 					isNew: false,
-					price: '$ 2,999',
+					price: 2999,
 					model: 'XX99 Mark II',
 					title: 'XX99 Mark II Headphones',
 					img: '/products-assets/headphones/XX99-mark-1/main-img.png',
@@ -28,9 +31,10 @@ const initialState = {
 				},
 				{
 					id: 1,
+					counter: 0,
 					isNew: false,
 					model: 'XX99 Mark I',
-					price: '$ 29 999',
+					price: 29999,
 					title: 'XX99 Mark I Headphones',
 					img: '/products-assets/headphones/XX99-mark-2/main-img.png',
 					boxfill: { unit: 1, earcups: 2, manual: 1, cable: 2, bag: 1 },
@@ -48,9 +52,10 @@ const initialState = {
 				},
 				{
 					id: 2,
+					counter: 0,
 					isNew: false,
 					model: 'XX59',
-					price: '$ 2,999',
+					price: 2999,
 					title: 'XX59 Headphones',
 					img: '/products-assets/headphones/XX59/main-img.png',
 					boxfill: { unit: 1, earcups: 2, manual: 1, cable: 2, bag: 1 },
@@ -74,9 +79,10 @@ const initialState = {
 			advertisement: [
 				{
 					id: 3,
+					counter: 0,
 					isNew: true,
 					model: 'ZX9',
-					price: '$ 99,99',
+					price: 9999,
 					title: 'ZX9 SPEAKER',
 					img: '/products-assets/speakers/ZX9-speaker/main-img.png',
 					boxfill: { unit: 1, earcups: 2, manual: 1, cable: 2, bag: 1 },
@@ -94,8 +100,9 @@ const initialState = {
 				},
 				{
 					id: 4,
+					counter: 0,
 					isNew: false,
-					price: '$ 3,999',
+					price: 3999,
 					model: 'ZX7',
 					title: 'ZX7 SPEAKER',
 					img: '/products-assets/speakers/ZX7-speaker/main-img.png',
@@ -122,7 +129,8 @@ const initialState = {
 					isNew: true,
 					model: 'YX1',
 					id: 5,
-					price: '$ 2,999',
+					counter: 0,
+					price: 2999,
 					category: 'earphones',
 					title: 'YX1 WIRELESS EARPHONES',
 					img: '/products-assets/earphones/YX1-wireless-earphones/main-img.png',
@@ -143,6 +151,7 @@ const initialState = {
 		},
 	],
 	currentCategory: 0,
+	cart: [],
 };
 
 export const productsSlice = createSlice({
@@ -152,7 +161,38 @@ export const productsSlice = createSlice({
 		setCurrentCategory(state, action) {
 			state.currentCategory = action.payload;
 		},
+
+		addToCart(state, action) {
+			const itemId = action.payload.product.id;
+			const value = action.payload.count;
+			const item = action.payload.product;
+			const elementExist = state.cart.find((item) => item.id === itemId);
+			if (elementExist) {
+				elementExist.counter = elementExist.counter + value;
+			} else {
+				const updatedItem = { ...item, counter: value };
+				state.cart.push(updatedItem);
+			}
+		},
+
+		removeFromCart(state, action) {
+			const itemId = action.payload.id;
+			const elementExist = state.cart.find((item) => item.id === itemId);
+			if (elementExist) {
+				if (elementExist.counter === 1) {
+					state.cart = state.cart.filter((item) => item.id !== itemId);
+				} else {
+					elementExist.counter--;
+				}
+			}
+		},
+		clearCart(state) {
+			state.cart = [];
+		},
 	},
 });
 
-export const { setCurrentCategory } = productsSlice.actions;
+export const { setCurrentCategory, addToCart, removeFromCart, clearCart } =
+	productsSlice.actions;
+
+export const selectTotalAmount = (state) => calculateTotal(state.cart);
