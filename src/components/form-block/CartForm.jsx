@@ -80,7 +80,36 @@ const CartForm = () => {
 								type="radio"
 								placeholder="1137 Williams Avenue"
 							/>
-							<label for='e-money'>
+							<label for="e-money">
+								<div className="checker">
+									<div className="checker__oval-1">
+										<svg
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<circle
+												cx="10"
+												cy="10"
+												r="9.5"
+												stroke="#CFCFCF"
+											/>
+										</svg>
+
+										<svg
+											className="checker__oval-2"
+											viewBox="0 0 10 10"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<circle
+												cx="5"
+												cy="5"
+												r="5"
+												fill="#D87D4A"
+											/>
+										</svg>
+									</div>
+								</div>
+
 								<span>e-Money</span>
 							</label>
 							<input
@@ -89,7 +118,35 @@ const CartForm = () => {
 								type="radio"
 								placeholder="1137 Williams Avenue"
 							/>
-							<label for='cash'>
+							<label for="cash">
+							<div className="checker">
+									<div className="checker__oval-1">
+										<svg
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<circle
+												cx="10"
+												cy="10"
+												r="9.5"
+												stroke="#CFCFCF"
+											/>
+										</svg>
+
+										<svg
+											className="checker__oval-2"
+											viewBox="0 0 10 10"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<circle
+												cx="5"
+												cy="5"
+												r="5"
+												fill="#D87D4A"
+											/>
+										</svg>
+									</div>
+								</div>
 								<span>Cash on Delivery</span>
 							</label>
 						</div>

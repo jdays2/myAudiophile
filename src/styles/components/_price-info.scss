@@ -1,0 +1,125 @@
+.price-info {
+	width: 35rem;
+	padding: 3.2rem 3.3rem;
+	border-radius: 0.8rem;
+	background: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+
+	&__title {
+		color: $black-dark;
+		font-family: Manrope;
+		font-size: 1.8rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.1286rem;
+		text-transform: uppercase;
+		margin-bottom: 3.1rem;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		margin-bottom: 3.2rem;
+	}
+
+	&__item {
+		display: flex;
+		gap: 1.6rem;
+		align-items: center;
+	}
+
+	&__item-img {
+		width: 6.4rem;
+		height: 6.4rem;
+	}
+
+	&__content {
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
+		height: fit-content;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+
+		span {
+			color: $black-dark;
+			font-family: Manrope;
+			font-size: 1.4rem;
+			font-style: normal;
+			opacity: 0.5;
+			font-weight: 700;
+			line-height: 2.5rem;
+		}
+	}
+
+	&__content-col {
+		display: flex;
+		flex-direction: column;
+		strong {
+			color: $black-dark;
+			font-family: Manrope;
+			font-size: 1.5rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2.5rem;
+		}
+	}
+
+	&__total-box {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8rem;
+		margin-bottom: 2.4rem;
+	}
+
+	&__price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+		&--total {
+      strong {
+        color: $orange !important;
+      }
+		}
+
+		span {
+			color: $black-dark;
+			font-family: Manrope;
+			font-size: 1.5rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 2.5rem;
+			opacity: 0.5;
+		}
+
+		strong {
+			color: $black-dark;
+			text-align: right;
+			font-family: Manrope;
+			font-size: 1.8rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			text-transform: uppercase;
+		}
+	}
+
+  .btn {
+    margin-top: 3.2rem;
+    width: 23.4rem;
+    display: block;
+
+    span {
+      display: block;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+}

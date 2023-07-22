@@ -257,7 +257,16 @@
 	}
 
 	.btn {
-		width: 100%;
+		width: 31.3rem;
+		display: block;
+		span {
+			display: block;
+			width: -webkit-fit-content;
+			width: -moz-fit-content;
+			width: fit-content;
+
+			margin: 0 auto
+		}
 	}
 }
 
