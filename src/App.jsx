@@ -4,8 +4,10 @@ import Footer from './components/footer/Footer';
 import ProductDetail from './pages/ProductDetail';
 import Main from './pages/Main';
 import Category from './pages/Category';
+import Cart from './pages/Cart';
 
 import { Route, Routes } from 'react-router';
+
 
 const App = () => {
 	return (
@@ -23,6 +25,10 @@ const App = () => {
 				<Route
 					path="/card-detail/:cardId"
 					element={<ProductDetail />}
+				/>
+				<Route
+					path="/cart"
+					element={<Cart/>}
 				/>
 			</Routes>
 			<Footer />
