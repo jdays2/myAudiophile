@@ -1,10 +1,27 @@
 import { useSelector } from 'react-redux';
 import { moveTop } from '../../utils/moveTop';
 
-import { Link } from 'react-router-dom';
+import { selectTotalAmount } from '../../redux/slices/productsSlice';
+
+import PaymentApproved from '../payment-approved/PaymentApproved';
+import { useState } from 'react';
 
 const PriceInfo = () => {
 	const cartArray = useSelector((state) => state.cart);
+	const totalPrice = useSelector(selectTotalAmount);
+
+	const [activeModal, setActiveModal] = useState(false);
+
+	const toggleModal = () => {
+		setActiveModal(!activeModal);
+	};
+
+	const shipping = 50;
+	const getVat = () => {
+		return (totalPrice / 100) * 10;
+	};
+	const vat = getVat().toFixed(1);
+	const total = getVat() + shipping + totalPrice;
 
 	return (
 		<div className="price-info">
@@ -12,7 +29,9 @@ const PriceInfo = () => {
 			<ul className="price-info__list">
 				{cartArray.map((item, id) => {
 					return (
-						<li className="price-info__item" key={id}>
+						<li
+							className="price-info__item"
+							key={id}>
 							<div className="price-info__item-img">
 								<img
 									src={item.img}
@@ -34,28 +53,27 @@ const PriceInfo = () => {
 
 			<div className="price-info__total-box">
 				<div className="price-info__price">
-					<span>TOTAL</span> <strong>$ 5,396</strong>
+					<span>TOTAL</span> <strong>$ {totalPrice}</strong>
 				</div>
 				<div className="price-info__price">
-					<span>SHIPPING</span> <strong>$ 50</strong>
+					<span>SHIPPING</span> <strong>$ {shipping}</strong>
 				</div>
 
 				<div className="price-info__price">
-					<span>VAT (INCLUDED)</span> <strong>$ 1,079</strong>
+					<span>VAT (INCLUDED)</span> <strong>$ {vat}</strong>
 				</div>
 			</div>
 
 			<div className="price-info__price price-info__price--total">
-				<span>GRAND TOTAL</span> <strong>$ 5,446</strong>
+				<span>GRAND TOTAL</span> <strong>$ {total}</strong>
 			</div>
 
-			<Link
-				style={{ textDecoration: 'none' }}
-				onClick={moveTop}
-				to="/cart"
+			<button
+				onClick={toggleModal}
 				className="btn btn--orange">
 				<span>CONTINUE & PAY</span>
-			</Link>
+			</button>
+			{activeModal && <PaymentApproved toggleModal={toggleModal} total={total} cartArray={cartArray}/>}
 		</div>
 	);
 };
