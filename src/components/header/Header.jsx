@@ -20,7 +20,7 @@ const Header = () => {
 	return (
 		<header className="header">
 			<div className="header__wrapper">
-				{activeModal && <CartModal />}
+				{activeModal && <CartModal cartModalHandler={cartModalHandler}/>}
 				
 
 				<Link
