@@ -7,6 +7,10 @@
   height: -moz-fit-content;
   height: fit-content;
 
+	.cart-modal__wrapper {
+    z-index: 0;
+  }
+
 	&__title {
 		color: $black-dark;
 		font-family: Manrope;
@@ -111,7 +115,7 @@
 
   .btn {
     margin-top: 3.2rem;
-    width: 23.4rem;
+    width: 100%;
     display: block;
 
     span {
