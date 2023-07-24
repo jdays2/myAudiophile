@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { moveTop } from '../../utils/moveTop';
 
 import { clearCart } from '../../redux/slices/productsSlice';
 import { useDispatch } from 'react-redux';
+import { useRef, useEffect } from 'react';
 
-const PaymentApproved = ({ toggleModal, total, cartArray }) => {
+const PaymentApproved = ({ toggleModal, total, cartArray, btn }) => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const modal = useRef(null);
 
 	const clickHandler = () => {
 		toggleModal();
@@ -13,12 +18,36 @@ const PaymentApproved = ({ toggleModal, total, cartArray }) => {
 		dispatch(clearCart());
 	};
 
+	useEffect(() => {
+		const handleOutsideClick = (e) => {
+			// Проверяем, находится ли клик внутри модального окна
+			if (modal.current && !modal.current.contains(e.target)) {
+				// Если клик произошел за пределами модального окна
+				if (btn && btn.current && btn.current.contains(e.target)) {
+					// Исключаем обработку клика, если клик произошел на кнопке btn
+					return;
+				}
+				// Закрываем модальное окно
+				toggleModal();
+				moveTop();
+			}
+		};
+
+		document.addEventListener('click', handleOutsideClick);
+
+		return () => {
+			document.removeEventListener('click', handleOutsideClick);
+		};
+	}, []);
+
 	const firstItem = cartArray[0];
 	const others = cartArray.length - 1;
 	return (
 		<>
 			<div className="cart-modal__wrapper"></div>
-			<div className="payment-approve">
+			<div
+				className="payment-approve"
+				ref={modal}>
 				<div className="payment-approve__icon">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

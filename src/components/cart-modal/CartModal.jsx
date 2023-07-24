@@ -1,14 +1,16 @@
 import CartModalItem from './CartModalItem';
+
+import React, { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, selectTotalAmount } from '../../redux/slices/productsSlice';
 import { moveTop } from '../../utils/moveTop';
-
-import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const CartModal = ({cartModalHandler}) => {
+const CartModal = ({ cartModalHandler, btn }) => {
 	const dispatch = useDispatch();
 	const cart = useSelector((state) => state.cart);
 	const total = useSelector(selectTotalAmount);
+	const modal = useRef(null);
 
 	const removeAll = () => {
 		dispatch(clearCart());
@@ -16,13 +18,36 @@ const CartModal = ({cartModalHandler}) => {
 
 	const clickHandler = () => {
 		moveTop();
-		cartModalHandler()
-	}
+		cartModalHandler();
+	};
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      // Проверяем, находится ли клик внутри модального окна
+      if (modal.current && !modal.current.contains(e.target)) {
+        // Если клик произошел за пределами модального окна
+        if (btn && btn.current && btn.current.contains(e.target)) {
+          // Исключаем обработку клика, если клик произошел на кнопке btn
+          return;
+        }
+        // Закрываем модальное окно
+        cartModalHandler();
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
 
 	return (
 		<>
 			<div className="cart-modal__wrapper"></div>
-			<div className="cart-modal">
+			<div
+				className="cart-modal"
+				ref={modal}>
 				{cart.length === 0 ? (
 					<p className="cart-modal__empty">Your cart is empty.</p>
 				) : (
@@ -51,7 +76,11 @@ const CartModal = ({cartModalHandler}) => {
 							<strong>$ {total}</strong>
 						</div>
 
-						<Link to='/cart' className="btn btn--orange" style={{ textDecoration: 'none' }} onClick={clickHandler}>
+						<Link
+							to="/cart"
+							className="btn btn--orange"
+							style={{ textDecoration: 'none' }}
+							onClick={clickHandler}>
 							<span>checkout</span>
 						</Link>
 					</>
