@@ -4,8 +4,21 @@ import { addToCart } from '../../redux/slices/productsSlice';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const ProductCardDet = ({product}) => {
+const ProductCardDet = ({ product }) => {
+	const notify = () => toast.success('Added to cart!', {
+		position: "top-right",
+		autoClose: 1400,
+		hideProgressBar: false,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		theme: "dark",
+		delay: 400
+		});
 	const [count, setCount] = useState(1);
 
 	const counterPlus = () => {
@@ -21,9 +34,10 @@ const ProductCardDet = ({product}) => {
 	const dispatch = useDispatch();
 
 	const addItem = () => {
-		dispatch(addToCart({product, count}))
+		dispatch(addToCart({ product, count }));
 		setCount(1);
-	}
+		notify();
+	};
 
 	return (
 		<div className="detail-card">
@@ -43,9 +57,8 @@ const ProductCardDet = ({product}) => {
 						)}
 
 						<p className="title-black">{product.title}</p>
-						<p className="subtitle subtitle--black">
-							{product.subtitle}
-						</p>
+
+						<p className="subtitle subtitle--black">{product.subtitle}</p>
 
 						<span className="detail-card__price">$ {product.price}</span>
 
@@ -63,7 +76,9 @@ const ProductCardDet = ({product}) => {
 									+
 								</span>
 							</div>
-							<button className="btn btn--orange" onClick={addItem}>
+							<button
+								className="btn btn--orange"
+								onClick={addItem}>
 								<span>ADD TO CART</span>
 							</button>
 						</div>
@@ -103,6 +118,18 @@ const ProductCardDet = ({product}) => {
 								<p>Travel Bag</p>
 							</li>
 						</ul>
+						<ToastContainer
+							position="bottom-right"
+							autoClose={5000}
+							hideProgressBar={false}
+							newestOnTop={false}
+							closeOnClick
+							rtl={false}
+							pauseOnFocusLoss
+							draggable
+							pauseOnHover
+							theme="light"
+						/>
 					</div>
 				</div>
 			</div>

@@ -25,6 +25,22 @@
 		cursor: pointer;
 		width: 2.3333rem;
 		height: 2rem;
+		position: relative;
+	}
+
+	&__cart-value {
+		position: absolute;
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: #d87d4a;
+    border-radius: 50%;
+    top: -1rem;
+    right: -1rem;
+    z-index: 10;
+    color: #FFFFFF;
+    line-height: 1.6rem;
+    font-family: Manrope;
+    font-size: 1.1rem;
 	}
 }
 
@@ -80,7 +96,7 @@
 	z-index: 10;
 	-webkit-animation: fadeIn 0.3s ease;
 	animation: fadeIn 0.3s ease;
-	
+
 	&__wrapper {
 		content: '';
 		position: fixed;
@@ -263,7 +279,7 @@
 			width: -moz-fit-content;
 			width: fit-content;
 
-			margin: 0 auto
+			margin: 0 auto;
 		}
 	}
 }

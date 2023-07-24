@@ -4,6 +4,7 @@ import { isEven } from '../../utils/isEven';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ id, img, isNew, title, subtitle }) => {
+
 	return (
 		<div className={`product-card ${isEven(id) ? 'product-card--revert' : ''}`}>
 			<div className="product-card__img">
@@ -21,7 +22,8 @@ const ProductCard = ({ id, img, isNew, title, subtitle }) => {
 				<p className="title-black">{title}</p>
 				<p className="subtitle subtitle--black">{subtitle}</p>
 
-				<Link style={{ textDecoration: 'none' }}  
+				<Link
+					style={{ textDecoration: 'none' }}
 					to={`/card-detail/${id}`}
 					onClick={moveTop}
 					className="btn btn--orange">

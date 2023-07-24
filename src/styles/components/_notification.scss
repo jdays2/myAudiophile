@@ -1,0 +1,32 @@
+.Toastify__toast-body {
+	background-color: $black-dark;
+}
+
+.Toastify__toast-theme--dark {
+	background-color: $black-dark !important;
+	color: $white !important;
+
+	font-family: Manrope;
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 2.5rem;
+}
+
+.Toastify__toast-icon {
+  margin-right: 2rem;
+  svg {
+    path {
+      fill: $white !important;
+    }
+  }
+}
+
+.Toastify__toast-container {
+	top: 10rem !important;
+  width: 24rem;
+}
+
+.Toastify__progress-bar.Toastify__progress-bar--animated.Toastify__progress-bar-theme--dark.Toastify__progress-bar--success {
+	background-color: $orange;
+}

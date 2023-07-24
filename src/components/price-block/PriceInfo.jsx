@@ -4,13 +4,15 @@ import { moveTop } from '../../utils/moveTop';
 import { selectTotalAmount } from '../../redux/slices/productsSlice';
 
 import PaymentApproved from '../payment-approved/PaymentApproved';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const PriceInfo = () => {
 	const cartArray = useSelector((state) => state.cart);
 	const totalPrice = useSelector(selectTotalAmount);
 
 	const [activeModal, setActiveModal] = useState(false);
+
+	const btn = useRef(null);
 
 	const toggleModal = () => {
 		setActiveModal(!activeModal);
@@ -70,10 +72,10 @@ const PriceInfo = () => {
 
 			<button
 				onClick={toggleModal}
-				className="btn btn--orange">
+				className="btn btn--orange" ref={btn}>
 				<span>CONTINUE & PAY</span>
 			</button>
-			{activeModal && <PaymentApproved toggleModal={toggleModal} total={total} cartArray={cartArray}/>}
+			{activeModal && <PaymentApproved toggleModal={toggleModal} total={total} cartArray={cartArray} btn={btn}/>}
 		</div>
 	);
 };
