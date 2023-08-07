@@ -3,7 +3,7 @@
 	margin-top: 17.6rem;
 
 	&__wrapper {
-		width: 111rem;
+		@include section-width;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;

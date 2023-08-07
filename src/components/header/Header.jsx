@@ -22,6 +22,30 @@ const Header = () => {
 	return (
 		<header className="header">
 			<div className="header__wrapper">
+				<div className="header__burger-btn">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 16 15"
+						fill="none">
+						<rect
+							width="16"
+							height="3"
+							fill="white"
+						/>
+						<rect
+							y="6"
+							width="16"
+							height="3"
+							fill="white"
+						/>
+						<rect
+							y="12"
+							width="16"
+							height="3"
+							fill="white"
+						/>
+					</svg>
+				</div>
 				<Link
 					style={{ textDecoration: 'none' }}
 					to="/"
@@ -61,7 +85,12 @@ const Header = () => {
 					{value > 0 && <span className="header__cart-value">{value}</span>}
 				</button>
 
-				{activeModal && <CartModal cartModalHandler={cartModalHandler} btn={btn}/>}
+				{activeModal && (
+					<CartModal
+						cartModalHandler={cartModalHandler}
+						btn={btn}
+					/>
+				)}
 			</div>
 		</header>
 	);
