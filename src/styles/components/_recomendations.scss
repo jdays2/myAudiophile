@@ -15,7 +15,7 @@
 	}
 
 	&__list {
-		width: 111rem;
+		@include section-width;
 		margin: 0 auto;
 		display: flex;
 		gap: 3rem;

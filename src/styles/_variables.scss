@@ -4,8 +4,17 @@ $orange-light: #fbaf85;
 $black: #101010;
 $gray: #f1f1f1;
 $light: #fafafa;
-$white: #FFFFFF;
+$white: #ffffff;
 $black-dark: #000000;
+
+//величины
+@mixin section-width() {
+	width: 111rem;
+
+	@media (max-width: 48em) {
+		width: 100%;
+	}
+}
 
 //длинная анимаций
 $basic-duration: 0.4s;

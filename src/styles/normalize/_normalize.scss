@@ -579,3 +579,11 @@ button {
 	border: none;
 	background-color: transparent;
 }
+
+@media (max-width: 48em) {
+	html {
+			font-size: 5px;
+			font-size: 1.5625vw;
+			font-size: calc((100/375) * 5vw); // где 375 это ширина моб версии макета
+	}
+}
