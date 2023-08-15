@@ -20,6 +20,9 @@
 		border-radius: 0.8rem;
 		gap: 13.828rem;
 		justify-content: center;
+		background-image: url('../../assets/svg/white-circles-bg-main.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
 
 		&__img {
 			width: 41.0234rem;
@@ -127,11 +130,32 @@
 @media (max-width: 48em) {
 	.advisable {
 		width: 100%;
-		margin-bottom: 9.6rem;
+		margin-bottom: 24rem;
 
 		&__wrapper {
 			width: 65.4rem;
 			margin: 0 auto;
+			gap: 4.8rem;
+		}
+
+		.message {
+			margin-bottom: 4.8rem;
+			gap: 4.8rem;
+			align-items: center;
+			.title {
+				font-size: 7.2rem;
+				font-weight: 700;
+				line-height: 8rem;
+				letter-spacing: 0.256rem;
+				text-align: center;
+			}
+			.subtitle {
+				font-size: 3rem;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 5rem;
+				text-align: center;
+			}
 		}
 
 		.large-block {
@@ -143,11 +167,17 @@
 			width: 100%;
 			height: 120rem;
 			border-radius: 1.6rem;
+			background-image: url('../../assets/svg/white-circles-bg.svg');
+
+			&__content {
+				width: 56rem;
+			}
 
 			&__img {
 				width: 34.4rem;
 				height: 41.4rem;
-				margin-top: 11.0rem;
+				margin-top: 11rem;
+				margin-bottom: 6.2rem;
 			}
 
 			.btn--black {
@@ -158,23 +188,66 @@
 		}
 
 		.medium-block {
-			height: 32rem;
+			height: 64rem;
 			border-radius: 1.6rem;
+
 			&__content {
 				margin-left: 6.225rem;
+				width: 100%;
+				gap: 6.4rem;
+			}
+
+			&__title {
+				color: white;
+				font-size: 5.6rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: 0.4rem;
+			}
+
+			.btn {
+				border-color: white;
+				span {
+					color: white;
+				}
+			}
+
+			&__img {
+				img {
+					-o-object-fit: cover;
+					object-fit: cover;
+					-o-object-position: -125rem;
+					object-position: -125rem;
+				}
 			}
 		}
 
 		.small-block {
-			height: 32rem;
-			gap: 1.1rem;
+			height: 84.8rem;
+			gap: 4.8rem;
+			flex-direction: column;
 
 			&__title {
-				margin-left: 4.1rem;
+				margin-left: 4.8rem;
+				font-size: 5.6rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: 0.4rem;
+			}
+
+			&__img {
+				border-radius: 1.6rem;
+			}
+
+			&__content {
+				border-radius: 1.6rem;
+				gap: 6.4rem;
 			}
 
 			.btn {
-				margin-left: 4.1rem;
+				margin-left: 4.8rem;
 			}
 		}
 	}
