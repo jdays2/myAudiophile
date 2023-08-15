@@ -11,7 +11,7 @@ const initialState = {
 				{
 					id: 0,
 					counter: 0,
-					isNew: false,
+					isNew: true,
 					price: 2999,
 					model: 'XX99 Mark II',
 					title: 'XX99 Mark II Headphones',

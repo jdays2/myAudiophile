@@ -40,12 +40,12 @@
 
 .back-btn {
 	cursor: pointer;
-  border: none;
+	border: none;
 	outline: none;
 	background-color: transparent;
 	opacity: 0.5;
 	margin-bottom: 5.6rem;
-	
+
 	span {
 		color: $black-dark;
 		font-family: Manrope;
@@ -74,5 +74,18 @@
 	.btn--orange:hover {
 		background-color: $orange-light;
 		border-color: $orange-light;
+	}
+}
+
+@media (max-width: 48em) {
+	.back-btn {
+		margin-top: 3.2rem;
+		margin-left: 4.8rem;
+		span {
+			font-size: 3rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 5rem;
+		}
 	}
 }
