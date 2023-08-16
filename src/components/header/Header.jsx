@@ -82,7 +82,11 @@ const Header = () => {
 						src={cartIcon}
 						alt=""
 					/>
-					{value > 0 && <span className="header__cart-value">{value}</span>}
+					{value > 0 && (
+						<div className="header__cart-value">
+							<span>{value}</span>
+						</div>
+					)}
 				</button>
 
 				{activeModal && (

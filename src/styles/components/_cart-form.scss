@@ -180,18 +180,329 @@
 			}
 		}
 
-		&__oval-2{
+		&__oval-2 {
 			width: 1rem !important;
 			height: 1rem !important;
 			position: absolute;
 			top: 0.5rem;
 			left: 0.5rem;
-			
+
 			circle {
 				fill: #fff;
 			}
 		}
 	}
+}
 
+@media (max-width: 48em) {
+	* {
+		box-sizing: border-box;
+	}
+	.cart-form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
 
+		&__wrapper {
+			width: 65.4rem;
+			display: flex;
+			flex-direction: column;
+			gap: 6.4rem;
+		}
+
+		&__main {
+			width: 65.4rem;
+			border-radius: 1.6rem;
+			padding: 4.8rem 4.8rem 6.4rem 4.8rem;
+		}
+
+		&__list {
+			width: 100%;
+			gap: 4.8rem;
+		}
+
+		&__title {
+			font-size: 5.6rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			letter-spacing: 0.2rem;
+			margin-bottom: 6.2rem;
+		}
+
+		&__section-title {
+			font-size: 2.6rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 5rem; /* 192.308% */
+			letter-spacing: 0.18rem;
+			margin-bottom: 3.2rem;
+		}
+
+		&__item {
+			gap: 1.8rem;
+			width: 100%;
+
+			label {
+				font-size: 2.4rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: -0.0428rem;
+			}
+
+			input {
+				width: 100%;
+
+				padding: 3.6rem 4.8rem;
+				border-radius: 1.6rem;
+
+				font-size: 2.8rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: -0.05rem;
+			}
+		}
+
+		&__item--chekers {
+			flex-direction: column;
+			gap: 3.4rem;
+
+			p {
+				font-size: 2.4rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: -0.0428rem;
+			}
+		}
+
+		&__radio-wrapper {
+			width: 100%;
+			gap: 3.2rem;
+
+			label {
+				border-radius: 1.6rem;
+				height: 11.2rem;
+
+				span {
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 2.8rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+					letter-spacing: -0.05rem;
+					padding-left: 10.4rem;
+				}
+
+				.checker {
+					top: 50%;
+					transform: translateY(-50%);
+					width: 4rem;
+					height: 4rem;
+					&__oval-2 {
+						width: 2rem !important;
+						height: 2rem !important;
+						top: 1rem;
+						left: 1rem;
+					}
+				}
+			}
+		}
+
+		.price-info {
+			width: 100%;
+			padding: 6.4rem 4.8rem;
+			border-radius: 1.6rem;
+
+			&__title {
+				font-size: 3.6rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: 0.26rem;
+				margin-bottom: 6.2rem;
+			}
+
+			&__total-box {
+				gap: 1.6rem;
+			}
+
+			&__price {
+				span {
+					font-size: 3rem;
+					font-style: normal;
+					font-weight: 500;
+					line-height: 5rem;
+				}
+
+				strong {
+					font-size: 3.6rem;
+					font-style: normal;
+					font-weight: 700;
+				}
+			}
+
+			.btn {
+				margin-top: 6.4rem;
+			}
+
+			&__item {
+				gap: 3.2rem;
+			}
+
+			&__content-col {
+				strong {
+					font-size: 3rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 5rem;
+				}
+
+				span {
+					font-size: 2.8rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 5rem;
+				}
+			}
+
+			&__list {
+				margin-bottom: 6.4rem;
+				gap: 4.8rem;
+			}
+
+			&__content {
+				span {
+					font-size: 3rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 5rem;
+				}
+			}
+
+			&__item-img {
+				min-width: 12.8rem;
+				min-height: 12.8rem;
+				width: 12.8rem;
+				height: 12.8rem;
+				border-radius: 1.6rem;
+				overflow: hidden;
+			}
+		}
+
+		.payment-approve {
+			z-index: 20;
+			top: 22.2rem;
+			border-radius: 1.6rem;
+			padding: 6.4rem;
+			width: 65.4rem;
+
+			&__icon {
+				width: 12.8rem;
+				height: 12.8rem;
+				margin-bottom: 4.6rem;
+			}
+
+			&__title {
+				font-size: 4.8rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: 116.667%;
+				letter-spacing: 0.172rem;
+				margin-bottom: 3.2rem;
+				width: 51.6rem;
+			}
+
+			&__subtitle {
+				font-size: 3rem;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 5rem;
+				margin-bottom: 4.8rem;
+			}
+
+			&__example {
+				padding: 4.8rem;
+			}
+
+			&__content {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				border-radius: 1.6rem;
+
+				span {
+					font-size: 2.8rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 5rem;
+				}
+			}
+
+			&__item {
+				width: 100%;
+				gap: 3.2rem;
+				padding-bottom: 2.4rem;
+				margin-bottom: 2.4rem;
+			}
+
+			&__others {
+				font-size: 2.4rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: -0.0428rem;
+			}
+
+			&__item-info {
+				strong {
+					font-size: 3rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 5rem;
+				}
+
+				span {
+					font-size: 3rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 5rem;
+				}
+			}
+
+			&__item-img {
+				width: 11rem;
+				height: 11rem;
+				min-width: 11rem;
+				min-height: 11rem;
+			}
+
+			.btn {
+				width: 100%;
+			}
+
+			&__total-box {
+				width: 100%;
+				gap: 1.6rem;
+				padding: 3rem 4.8rem;
+				span {
+					font-size: 3rem;
+					font-style: normal;
+					font-weight: 500;
+					line-height: 5rem;
+				}
+
+				strong {
+					font-size: 3.6rem;
+					font-style: normal;
+					font-weight: 700;
+				}
+			}
+		}
+	}
 }
