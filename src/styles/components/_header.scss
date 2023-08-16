@@ -41,10 +41,16 @@
 		top: -1rem;
 		right: -1rem;
 		z-index: 10;
-		color: #ffffff;
-		line-height: 1.6rem;
-		font-family: Manrope;
-		font-size: 1.1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		span {
+			color: #ffffff;
+			line-height: 1;
+			font-family: Manrope;
+			font-size: 1.1rem;
+		}
 	}
 }
 
@@ -306,26 +312,152 @@
 		align-items: center;
 		padding-left: 4.8rem;
 		padding-right: 4.8rem;
-		width: 32.7*2rem;
-		
+		width: 100%;
+
 		&__wrapper {
 			justify-content: space-between;
 			padding: 6.4rem 0rem;
 			width: 100%;
 			margin: 0;
 		}
+
 		&__nav {
 			display: none;
 		}
+
 		&__cart-btn {
 			width: 4.6rem;
 			height: 4rem;
 		}
+
 		&__burger-btn {
 			display: block;
 			width: 3.2rem;
 			height: 3rem;
 			margin: 0;
+		}
+
+		&__cart-value {
+			width: 3.4rem;
+			height: 3.4rem;
+			top: -1.5rem;
+			right: -1.5rem;
+
+			span {
+				font-size: 2.2rem;
+				width: -webkit-fit-content;
+				width: -moz-fit-content;
+				width: fit-content;
+				height: -webkit-fit-content;
+				height: -moz-fit-content;
+				height: fit-content;
+			}
+		}
+	}
+
+	.cart-modal {
+		width: 58.4rem;
+		border-radius: 1.6rem;
+		top: 22.8rem;
+		left: 50%;
+		right: 0rem;
+		z-index: 20;
+		transform: translateX(-50%);
+		-webkit-animation: none;
+		        animation: none;
+
+		&__head {
+			margin-bottom: 6.2rem;
+			strong {
+				font-size: 3.6rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: 0.26rem;
+			}
+		}
+
+		&__remove-btn {
+			font-size: 3rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 5rem;
+		}
+
+		&__list {
+			gap: 4.8rem;
+			margin-bottom: 6.2rem;
+		}
+
+		&__item {
+			gap: 3.2rem;
+		}
+
+		&__item-img {
+			width: 12.8rem;
+			height: 12.8rem;
+
+			min-width: 12.8rem;
+			min-height: 12.8rem;
+			border-radius: 1.6rem;
+			overflow: hidden;
+		}
+
+		&__item-content {
+			strong {
+				font-size: 3rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: 5rem;
+			}
+
+			span {
+				font-size: 2.8rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: 5rem;
+			}
+		}
+
+		&__item-controller {
+			padding: 1.4rem 2.3rem;
+			gap: 2.4rem;
+
+			button {
+				font-size: 2.6rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: 0.2rem;
+			}
+
+			span {
+				font-size: 2.6rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: 0.2rem;
+			}
+		}
+
+		&__price {
+			margin-bottom: 4.8rem;
+			span {
+				font-size: 3rem;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 5rem;
+			}
+
+			strong {
+				font-size: 3.6rem;
+				font-style: normal;
+				font-weight: 700;
+			}
+		}
+
+		.btn {
+			width: 100%;
 		}
 	}
 
