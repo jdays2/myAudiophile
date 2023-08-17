@@ -1,0 +1,62 @@
+.burger-menu {
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 70%;
+	height: 100vh;
+	background-color: #000;
+	padding: 4rem;
+  -webkit-animation: slideIn 0.3s ease;
+          animation: slideIn 0.3s ease;
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	&__item {
+		span {
+			color: $white;
+			font-family: Manrope;
+			font-size: 3.6rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			letter-spacing: 0.2rem;
+			text-transform: uppercase;
+		}
+	}
+
+	&__close-btn {
+		width: 100%;
+		margin-bottom: 4rem;
+		color: white;
+
+
+		svg {
+      display: block;
+			margin-left: auto;
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	}
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {  
+    transform: translateX(0);
+  }
+}
