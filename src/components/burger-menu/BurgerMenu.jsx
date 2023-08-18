@@ -7,13 +7,12 @@ const BurgerMenu = ({ toggleMenu, categoryArray }) => {
 			<div className="cart-modal__wrapper"></div>
 
 			<div className="burger-menu">
-				<button
-					className="close-button burger-menu__close-btn">
-					<svg onClick={toggleMenu}
+				<button className="close-button burger-menu__close-btn">
+					<svg
+						onClick={toggleMenu}
 						viewBox="0 -0.5 21 21"
 						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						>
+						xmlns="http://www.w3.org/2000/svg">
 						<defs></defs>
 						<g
 							id="Page-1"
@@ -37,16 +36,19 @@ const BurgerMenu = ({ toggleMenu, categoryArray }) => {
 					</svg>
 				</button>
 				<div className="burger-menu__list">
-        {categoryArray.map((category, id) => (
-						<Link className="burger-menu__item"
-							onClick={moveTop}
+					{categoryArray.map((category, id) => (
+						<Link
+							className="burger-menu__item"
+							onClick={() => {
+								moveTop();
+								toggleMenu();
+							}}
 							style={{ textDecoration: 'none' }}
 							to={`/category/${category.title}`}
 							key={id}>
 							<span>{category.title}</span>
 						</Link>
 					))}
-		
 				</div>
 			</div>
 		</>
