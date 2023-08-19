@@ -18,17 +18,20 @@ const Header = () => {
 	const value = cart.length;
 
 	const cartModalHandler = () => {
+		console.log('клик по cart-btn');
 		setActiveModal(!activeModal);
 	};
 
 	const toggleMenu = () => {
+		console.log('клик по modal-btn');
 		setIsOpen(!isOpen);
+		
 	};
 
 	return (
 		<header className="header">
 			<div className="header__wrapper">
-				<div
+				<button
 					className="header__burger-btn"
 					onClick={toggleMenu}>
 					<svg
@@ -53,7 +56,7 @@ const Header = () => {
 							fill="white"
 						/>
 					</svg>
-				</div>
+				</button>
 				<Link
 					style={{ textDecoration: 'none' }}
 					to="/"
@@ -84,8 +87,8 @@ const Header = () => {
 
 				<button
 					className="header__cart-btn"
-					onClick={cartModalHandler}
-					ref={btn}>
+					ref={btn}
+					onClick={cartModalHandler}>
 					<img
 						src={cartIcon}
 						alt=""
@@ -97,15 +100,18 @@ const Header = () => {
 					)}
 				</button>
 
-				{activeModal && (
-					<CartModal
-						cartModalHandler={cartModalHandler}
-						btn={btn}
-					/>
-				)}
+				<CartModal
+					cartModalHandler={cartModalHandler}
+					btn={btn}
+					activeModal={activeModal}
+				/>
 			</div>
 
-			{!!isOpen && <BurgerMenu toggleMenu={toggleMenu} categoryArray={categoryArray}/>}
+			<BurgerMenu
+				isOpen={isOpen}
+				toggleMenu={toggleMenu}
+				categoryArray={categoryArray}
+			/>
 		</header>
 	);
 };
