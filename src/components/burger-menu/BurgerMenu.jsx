@@ -9,6 +9,16 @@ const BurgerMenu = ({ toggleMenu, categoryArray, isOpen }) => {
 
 			<div className={`${isOpen ? 'burger-menu active' : 'burger-menu'}`}>
 				<div className="burger-menu__head">
+					<Link
+						className="burger-menu__home-icon"
+						onClick={() => {
+							moveTop();
+							toggleMenu();
+						}}
+						style={{ textDecoration: 'none' }}
+						to={'/'}>
+						<AiOutlineHome />
+					</Link>
 					<button className="close-button burger-menu__close-btn">
 						<svg
 							onClick={toggleMenu}
@@ -37,16 +47,6 @@ const BurgerMenu = ({ toggleMenu, categoryArray, isOpen }) => {
 							</g>
 						</svg>
 					</button>
-					<Link
-						className="burger-menu__home-icon"
-						onClick={() => {
-							moveTop();
-							toggleMenu();
-						}}
-						style={{ textDecoration: 'none' }}
-						to={'/'}>
-						<AiOutlineHome />
-					</Link>
 				</div>
 				<div className="burger-menu__list">
 					{categoryArray.map((category, id) => (

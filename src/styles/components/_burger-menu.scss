@@ -46,7 +46,6 @@
 		width: -webkit-fit-content;
 		width: -moz-fit-content;
 		width: fit-content;
-		margin-left: auto;
 		align-items: center;
 		span {
 			color: $white;
@@ -61,7 +60,6 @@
 	}
 
 	&__close-btn {
-		width: 100%;
 		color: white;
 
 		svg {
