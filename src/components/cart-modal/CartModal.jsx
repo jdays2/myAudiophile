@@ -6,7 +6,7 @@ import { clearCart, selectTotalAmount } from '../../redux/slices/productsSlice';
 import { moveTop } from '../../utils/moveTop';
 import { Link } from 'react-router-dom';
 
-const CartModal = ({ cartModalHandler, btn }) => {
+const CartModal = ({ cartModalHandler, btn, activeModal }) => {
 	const dispatch = useDispatch();
 	const cart = useSelector((state) => state.cart);
 	const total = useSelector(selectTotalAmount);
@@ -21,32 +21,30 @@ const CartModal = ({ cartModalHandler, btn }) => {
 		cartModalHandler();
 	};
 
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      // Проверяем, находится ли клик внутри модального окна
-      if (modal.current && !modal.current.contains(e.target)) {
-        // Если клик произошел за пределами модального окна
-        if (btn && btn.current && btn.current.contains(e.target)) {
-          // Исключаем обработку клика, если клик произошел на кнопке btn
-          return;
-        }
-        // Закрываем модальное окно
-        cartModalHandler();
-      }
-    };
-
-    document.addEventListener('click', handleOutsideClick);
-
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
+	useEffect(() => {
+		const handleOutsideClick = (e) => {
+			if (activeModal && modal.current && !modal.current.contains(e.target)) {
+				if (btn && btn.current && btn.current.contains(e.target)) {
+					return;
+				}
+				cartModalHandler();
+			}
+		};
+	
+		if (activeModal) {
+			document.addEventListener('click', handleOutsideClick);
+		}
+	
+		return () => {
+			document.removeEventListener('click', handleOutsideClick);
+		};
+	}, [activeModal]);
 
 	return (
 		<>
-			<div className="cart-modal__wrapper"></div>
+			<div className={`${activeModal ? 'modal-bg active' : 'modal-bg'}`}></div>
 			<div
-				className="cart-modal"
+				className={`${activeModal ? 'cart-modal active' : 'cart-modal'}`}
 				ref={modal}>
 				{cart.length === 0 ? (
 					<p className="cart-modal__empty">Your cart is empty.</p>

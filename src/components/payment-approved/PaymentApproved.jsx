@@ -6,7 +6,13 @@ import { clearCart } from '../../redux/slices/productsSlice';
 import { useDispatch } from 'react-redux';
 import { useRef, useEffect } from 'react';
 
-const PaymentApproved = ({ toggleModal, total, cartArray, btn }) => {
+const PaymentApproved = ({
+	toggleModal,
+	total,
+	cartArray,
+	btn,
+	activeModal,
+}) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -20,14 +26,10 @@ const PaymentApproved = ({ toggleModal, total, cartArray, btn }) => {
 
 	useEffect(() => {
 		const handleOutsideClick = (e) => {
-			// Проверяем, находится ли клик внутри модального окна
-			if (modal.current && !modal.current.contains(e.target)) {
-				// Если клик произошел за пределами модального окна
+			if (activeModal && modal.current && !modal.current.contains(e.target)) {
 				if (btn && btn.current && btn.current.contains(e.target)) {
-					// Исключаем обработку клика, если клик произошел на кнопке btn
 					return;
 				}
-				// Закрываем модальное окно
 				toggleModal();
 				moveTop();
 			}
@@ -38,15 +40,17 @@ const PaymentApproved = ({ toggleModal, total, cartArray, btn }) => {
 		return () => {
 			document.removeEventListener('click', handleOutsideClick);
 		};
-	}, []);
+	}, [activeModal]);
 
 	const firstItem = cartArray[0];
 	const others = cartArray.length - 1;
 	return (
 		<>
-			<div className="cart-modal__wrapper"></div>
+			<div className={`${activeModal ? 'modal-bg active' : 'modal-bg'}`}></div>
 			<div
-				className="payment-approve"
+				className={`${
+					activeModal ? 'payment-approve active' : 'payment-approve'
+				}`}
 				ref={modal}>
 				<div className="payment-approve__icon">
 					<svg
@@ -98,7 +102,7 @@ const PaymentApproved = ({ toggleModal, total, cartArray, btn }) => {
 					</div>
 					<div className="payment-approve__total-box">
 						<span>GRAND TOTAL</span>
-						<strong>{total}</strong>
+						<strong>$ {total}</strong>
 					</div>
 				</div>
 

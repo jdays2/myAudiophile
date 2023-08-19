@@ -75,7 +75,7 @@ const PriceInfo = () => {
 				className="btn btn--orange" ref={btn}>
 				<span>CONTINUE & PAY</span>
 			</button>
-			{activeModal && <PaymentApproved toggleModal={toggleModal} total={total} cartArray={cartArray} btn={btn}/>}
+			<PaymentApproved toggleModal={toggleModal} activeModal={activeModal} total={total} cartArray={cartArray} btn={btn}/>
 		</div>
 	);
 };

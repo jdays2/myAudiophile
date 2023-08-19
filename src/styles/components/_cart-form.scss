@@ -397,10 +397,10 @@
 
 		.payment-approve {
 			z-index: 20;
-			top: 22.2rem;
 			border-radius: 1.6rem;
 			padding: 6.4rem;
 			width: 65.4rem;
+			pointer-events: none;
 
 			&__icon {
 				width: 12.8rem;
