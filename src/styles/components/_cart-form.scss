@@ -94,9 +94,14 @@
 				border-radius: 0.8rem;
 				border: 0.1rem solid #cfcfcf;
 				position: relative;
+				display: flex;
+				justify-content: space-between;
 
 				span {
 					color: $black-dark;
+					width: -webkit-fit-content;
+					width: -moz-fit-content;
+					width: fit-content;
 					font-family: Manrope;
 					font-size: 1.4rem;
 					font-style: normal;
@@ -118,6 +123,10 @@
 			font-weight: 700;
 			line-height: normal;
 			letter-spacing: -0.0214rem;
+
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
 		}
 
 		input {
@@ -137,6 +146,32 @@
 
 			&:focus {
 				border-color: $orange !important;
+			}
+		}
+
+		&.error {
+			label {
+				span {
+					font-weight: 700;
+					color: #cd2c2c;
+				}
+
+				div {
+					span {
+						color: #cd2c2c;
+						text-align: right;
+						font-family: Manrope;
+						font-size: 1.4rem;
+						font-style: normal;
+						font-weight: 500;
+						line-height: normal;
+						letter-spacing: -0.0114rem;
+					}
+				}
+			}
+
+			input {
+				border: 0.2rem solid #cd2c2c;
 			}
 		}
 	}
@@ -246,11 +281,17 @@
 			width: 100%;
 
 			label {
-				font-size: 2.4rem;
-				font-style: normal;
-				font-weight: 700;
-				line-height: normal;
-				letter-spacing: -0.0428rem;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				justify-content: space-between;
+				span {
+					font-size: 2.4rem;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+					letter-spacing: -0.0428rem;
+				}
 			}
 
 			input {
@@ -353,8 +394,15 @@
 
 			&__item {
 				gap: 3.2rem;
+				position: relative;
 			}
 
+			&__item.error label div span {
+				color: #cd2c2c;
+				text-align: right;
+				font-family: Manrope;
+				font-size: 2.7rem;
+			}
 			&__content-col {
 				strong {
 					font-size: 3rem;
