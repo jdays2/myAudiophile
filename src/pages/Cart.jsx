@@ -1,6 +1,5 @@
 import BackBtn from '../components/back-btn/BackBtn';
 import CartForm from '../components/form-block/CartForm';
-import PriceInfo from '../components/price-block/PriceInfo';
 
 const Cart = () => {
 	return (
@@ -8,10 +7,9 @@ const Cart = () => {
 			<div className="cart-form__btn-wrapper">
 				<BackBtn />
 			</div>
-			<div className="cart-form__wrapper">
+			
 				<CartForm />
-				<PriceInfo />
-			</div>
+
 		</div>
 	);
 };
