@@ -18,14 +18,11 @@ const Header = () => {
 	const value = cart.length;
 
 	const cartModalHandler = () => {
-		console.log('клик по cart-btn');
 		setActiveModal(!activeModal);
 	};
 
 	const toggleMenu = () => {
-		console.log('клик по modal-btn');
 		setIsOpen(!isOpen);
-		
 	};
 
 	return (
