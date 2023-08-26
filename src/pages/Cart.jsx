@@ -7,9 +7,8 @@ const Cart = () => {
 			<div className="cart-form__btn-wrapper">
 				<BackBtn />
 			</div>
-			
-				<CartForm />
 
+			<CartForm />
 		</div>
 	);
 };
