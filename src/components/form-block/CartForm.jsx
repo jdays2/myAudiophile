@@ -31,8 +31,15 @@ const CartForm = () => {
 		setActiveModal(!activeModal);
 	};
 
-	const setMethod = (value) => {
-		setPaymentMethod(value);
+	const setMethod = () => {
+		const isChecked = paymenth.current.checked;
+		if (isChecked) {
+			setPaymentMethod(isChecked);
+			console.log(paymentMethod);
+		} else {
+			setPaymentMethod(isChecked);
+			console.log(paymentMethod);
+		}
 	};
 
 	const shipping = 50;
@@ -41,16 +48,6 @@ const CartForm = () => {
 	};
 	const vat = getVat().toFixed(1);
 	const total = getVat() + shipping + totalPrice;
-
-	useEffect(() => {
-		const isChecked = paymenth.current.checked
-		console.log(isChecked)
-		if(isChecked) {
-			console.log('checked!')
-		} else {
-			console.log('unchecked!')
-		}
-	}, [paymenth]);
 
 	return (
 		<form
@@ -296,7 +293,9 @@ const CartForm = () => {
 									placeholder="1137 Williams Avenue"
 									checked
 								/>
-								<label for="e-money">
+								<label
+									for="e-money"
+									onClick={setMethod}>
 									<div className="checker">
 										<div className="checker__oval-1">
 											<svg
@@ -335,7 +334,9 @@ const CartForm = () => {
 									ref={paymenth}
 									placeholder="1137 Williams Avenue"
 								/>
-								<label for="cash">
+								<label
+									for="cash"
+									onClick={setMethod}>
 									<div className="checker">
 										<div className="checker__oval-1">
 											<svg
@@ -369,68 +370,71 @@ const CartForm = () => {
 							</div>
 						</div>
 
-						<div
-							className={`${
-								errors?.eMoney ? 'cart-form__item error' : 'cart-form__item'
-							}`}>
-							<label>
-								<span>e-Money Number</span>
+						{paymentMethod ? (
+							<>
+								<div
+									className={`${
+										errors?.eMoney ? 'cart-form__item error' : 'cart-form__item'
+									}`}>
+									<label>
+										<span>e-Money Number</span>
 
-								<div>
-									<span>{errors?.eMoney?.message}</span>
+										<div>
+											<span>{errors?.eMoney?.message}</span>
+										</div>
+									</label>
+									<input
+										{...register('eMoney', {
+											required: 'This field is mandatory',
+											minLength: {
+												value: 9,
+												message: 'Min 9 characters',
+											},
+											maxLength: {
+												value: 19,
+												message: 'Max 19 characters',
+											},
+											pattern: {
+												value: /^[0-9]+$/,
+												message: 'Invalid format',
+											},
+										})}
+										placeholder="238521993"
+									/>
 								</div>
-							</label>
-							<input
-								{...register('eMoney', {
-									required: 'This field is mandatory',
-									minLength: {
-										value: 9,
-										message: 'Min 9 characters',
-									},
-									maxLength: {
-										value: 19,
-										message: 'Max 19 characters',
-									},
-									pattern: {
-										value: /^[0-9]+$/,
-										message: 'Invalid format',
-									},
-								})}
-								placeholder="238521993"
-							/>
-						</div>
 
-						<div
-							className={`${
-								errors?.pin ? 'cart-form__item error' : 'cart-form__item'
-							}`}>
-							<label>
-								<span>e-Money PIN</span>
+								<div
+									className={`${
+										errors?.pin ? 'cart-form__item error' : 'cart-form__item'
+									}`}>
+									<label>
+										<span>e-Money PIN</span>
 
-								<div>
-									<span>{errors?.pin?.message}</span>
+										<div>
+											<span>{errors?.pin?.message}</span>
+										</div>
+									</label>
+									<input
+										{...register('pin', {
+											required: 'This field is mandatory',
+											minLength: {
+												value: 4,
+												message: 'Min 4 characters',
+											},
+											maxLength: {
+												value: 4,
+												message: 'Max 4 characters',
+											},
+											pattern: {
+												value: /^[0-9]+$/,
+												message: 'Invalid format',
+											},
+										})}
+										placeholder="6891"
+									/>
 								</div>
-							</label>
-							<input
-								{...register('pin', {
-									required: 'This field is mandatory',
-									minLength: {
-										value: 4,
-										message: 'Min 4 characters',
-									},
-									maxLength: {
-										value: 4,
-										message: 'Max 4 characters',
-									},
-									pattern: {
-										value: /^[0-9]+$/,
-										message: 'Invalid format',
-									},
-								})}
-								placeholder="6891"
-							/>
-						</div>
-						{paymentMethod && (
+							</>
+						) : (
 							<div className="cart-form__payment-message">
 								<span className="cart-form__payment-icon">
 									<svg

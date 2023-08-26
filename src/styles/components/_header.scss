@@ -60,6 +60,14 @@
 	width: 14.3rem;
 	height: 2.5rem;
 	margin-right: 19.7rem;
+	svg {
+		width: 100%;
+		height: 100%;
+
+		path {
+			transition: $basic-duration;
+		}
+	}
 }
 
 .nav-link {
@@ -277,6 +285,12 @@
 		color: $orange;
 	}
 
+	.main-logo:hover {
+		path {
+			fill: $orange;
+		}
+	}
+
 	.cart-modal__item-controller {
 		button:hover {
 			opacity: 1;
@@ -437,6 +451,16 @@
 		margin: 0;
 		width: 28.6rem;
 		height: 5rem;
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+
+		path {
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 
