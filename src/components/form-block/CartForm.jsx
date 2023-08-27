@@ -22,7 +22,7 @@ const CartForm = () => {
 	const totalPrice = useSelector(selectTotalAmount);
 
 	const [activeModal, setActiveModal] = useState(false);
-	const [paymentMethod, setPaymentMethod] = useState(false);
+	const [paymentMethod, setPaymentMethod] = useState(true);
 
 	const btn = useRef(null);
 	const paymenth = useRef(null);
@@ -31,15 +31,11 @@ const CartForm = () => {
 		setActiveModal(!activeModal);
 	};
 
-	const setMethod = () => {
-		const isChecked = paymenth.current.checked;
-		if (isChecked) {
-			setPaymentMethod(isChecked);
-			console.log(paymentMethod);
-		} else {
-			setPaymentMethod(isChecked);
-			console.log(paymentMethod);
+	const setMethod = (value) => {
+		if (paymentMethod === value) {
+			return;
 		}
+		setPaymentMethod(value);
 	};
 
 	const shipping = 50;
@@ -291,11 +287,12 @@ const CartForm = () => {
 									name="method"
 									type="radio"
 									placeholder="1137 Williams Avenue"
-									checked
 								/>
 								<label
 									for="e-money"
-									onClick={setMethod}>
+									onClick={() => {
+										setMethod(false);
+									}}>
 									<div className="checker">
 										<div className="checker__oval-1">
 											<svg
@@ -336,7 +333,9 @@ const CartForm = () => {
 								/>
 								<label
 									for="cash"
-									onClick={setMethod}>
+									onClick={() => {
+										setMethod(true);
+									}}>
 									<div className="checker">
 										<div className="checker__oval-1">
 											<svg
@@ -370,7 +369,7 @@ const CartForm = () => {
 							</div>
 						</div>
 
-						{paymentMethod ? (
+						{!paymentMethod ? (
 							<>
 								<div
 									className={`${
